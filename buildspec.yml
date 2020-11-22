@@ -7,8 +7,9 @@ phases:
       - ./gradlew build
   post_build:
     commands:
-      - echo $(baseName ./build/libs/*.war)
+      - echo $(basename ./build/libs/*.war)
       - pwd
+
 cache:
   paths:
     - '/root/.gradle/cache/**/*'
