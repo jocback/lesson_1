@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - echo Build Starting on 'date'
+      - chmod +x ./gradlew
+      - ./gradlew build
+  post_build:
+    commands:
+      - echo $(baseName ./build/libs/*.war)
+      - pwd
+cache:
+  paths:
+    - '/root/.gradle/cache/**/*'
